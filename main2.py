@@ -7,7 +7,7 @@ job = soup.find('li', class_ = 'clearfix job-bx wht-shd-bx')
 company = job.find('h3', class_ = 'joblist-comp-name').text.replace(' ', '') # instead of using soup.find, we can use job.find since we're only trying to find a specific element found in that specific job
 # the .replace is used to get rid of the extra white space and exchange them with nothing
 skills = job.find('span', class_ = 'srp-skills').text.replace(' ', '')
-date_posted = job.find('span', class_ = 'sim-posted').text
+date_posted = job.find('span', class_ = 'sim-posted').span.text
 
 print(f'''
 Company Name: {company}
